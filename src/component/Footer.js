@@ -1,13 +1,11 @@
-import React from 'react';
-import Compo from './Compo';
+import React from 'react'
+
 
 function Footer() {
   return (
     <div>
-      <div>
-        <div className='users'>
-          <Compo/>
-        </div>
+      <div className='footer'>
+
       </div>
     </div>
   )

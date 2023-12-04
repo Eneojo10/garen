@@ -1,45 +1,47 @@
 import React from 'react';
 import { BsBarChart } from 'react-icons/bs';
-import { RiMessage2Line } from 'react-icons/ri';
-import { AiFillFormatPainter } from 'react-icons/ai';
-import { AiFillHdd } from 'react-icons/ai';
-import { SiRoamresearch } from 'react-icons/si';
-import { FaGalacticRepublic } from 'react-icons/fa';
+import { RiHome4Fill } from 'react-icons/ri';
+import { AiTwotoneMoneyCollect } from 'react-icons/ai';
+import { CiSquareQuestion } from 'react-icons/ci';
+import { SiEditorconfig } from 'react-icons/si';
 import { GoSignIn } from 'react-icons/go';
-import { FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { TbReportSearch } from 'react-icons/tb';
+// import { FiUsers } from 'react-icons/fi';
 import Dark from './Dark';
+import image from './image/logo_image.png';
+
+
 
 function Compo() {
+
   return (
     <div>
       <div className='main-panel'>
         <div className='bg-txt'>
           <br />
-          <div className='bgg rounded-3'>
-            <div>
-              <h5 className='kxc p-2 text-white'>KXC Inc.</h5>
-            </div>
+          <div className='bgg text-white p-2'>
+            <img src={image} alt='' />
           </div>
-          <br />
+
           <div className='border-line'></div>
         </div>
         <br />
         <div className='dashboard'>
           <div className='dash_board'>
-            <Link className='line' to='/'>
+            <Link className='line' to='/panel'>
               <div className='dash d-flex text-white gap-3 p-2'>
                 <div>
                   <BsBarChart />
                 </div>
-                <div>
-                  <h5 className='ff'>Dashboard</h5>
+                <div className='manage mt-1'>
+                  <h6>Dashboard</h6>
                 </div>
               </div>
             </Link>
             <div className='dash d-flex text-white p-2'>
               <div>
-                <RiMessage2Line />
+                <RiHome4Fill />
               </div>
               <div
                 className='accordion accordion-flush'
@@ -55,7 +57,9 @@ function Compo() {
                       aria-expanded='false'
                       aria-controls='flush-collapseOne'
                     >
-                      Manage Messages
+                      <div className='manage mt-2'>
+                        <h6>Manage Resident</h6>
+                      </div>
                     </button>
                   </h5>
                   <div
@@ -65,23 +69,20 @@ function Compo() {
                     data-bs-parent='#accordionFlushExample'
                   >
                     <div className='accordion-body text-white bg-black'>
-                      <Link to={'/approval'} className='line'>
-                        <p>Resources Pending Approval</p>
+                      <Link to={'/ResidentForm'} className='line'>
+                        <p>Create New Residents</p>
                       </Link>
-                      <Link to={'/viewMsg'} className='line'>
-                        <p>View Messages</p>
-                      </Link>
-                      <Link to={'/send'} className='line'>
-                        <p>Send Message</p>
+                      <Link to={'/allResidents'} className='line'>
+                        <p>View All Residents</p>
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='dash d-flex text-white p-2'>
+            <div className='dash2 d-flex text-white p-2'>
               <div>
-                <AiFillFormatPainter />
+                <AiTwotoneMoneyCollect />
               </div>
               <div
                 className='accordion accordion-flush'
@@ -97,7 +98,9 @@ function Compo() {
                       aria-expanded='false'
                       aria-controls='flush-collapseTwo'
                     >
-                      Manage Categories
+                      <div className='manage mt-2'>
+                        <h6>Manage Payments</h6>
+                      </div>
                     </button>
                   </h5>
                   <div
@@ -107,26 +110,24 @@ function Compo() {
                     data-bs-parent='#accordionFlushExample'
                   >
                     <div className='accordion-body text-white bg-black'>
-                      <Link to={'/categories'} className='line'>
-                        <p>Create Category</p>
+                      <Link to={'/addpayments'} className='line'>
+                        <p>Add Payments</p>
                       </Link>
-                      <Link to={'/sub-category'} className='line'>
-                        <p>Create Sub-category</p>
+                      <Link to={'/paymentsInfo'} className='line'>
+                        <p>Sort Payments Info</p>
                       </Link>
-                      <Link to={'/List'} className='line'>
-                        <p>List of Categories</p>
-                      </Link>
-                      <Link to={'/sublist'} className='line'>
-                        <p>List of Sub-categories</p>
+                      <Link to={'/compliance'} className='line'>
+                        <p>View Compliance</p>
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='dash d-flex text-white p-2'>
+
+            <div className='dash2 d-flex text-white p-2'>
               <div>
-                <AiFillHdd />
+                <CiSquareQuestion />
               </div>
 
               <div
@@ -134,128 +135,135 @@ function Compo() {
                 id='accordionFlushExample'
               >
                 <div className='accordion-item'>
-                  <h5 className='accordion-header' id='flush-headingThree'>
+                  <h5 className='accordion-header' id='flush-headingFive'>
                     <button
                       className='a-btn accordion-button collapsed bg-black text-white'
                       type='button'
                       data-bs-toggle='collapse'
-                      data-bs-target='#flush-collapseThree'
+                      data-bs-target='#flush-collapseFive'
                       aria-expanded='false'
-                      aria-controls='flush-collapseThree'
+                      aria-controls='flush-collapseFive'
                     >
-                      Manage Resources
+                      <div className='manage mt-2'>
+                        <h6>Manage iRequests</h6>
+                      </div>
                     </button>
                   </h5>
                   <div
-                    id='flush-collapseThree'
+                    id='flush-collapseFive'
                     class='accordion-collapse collapse'
-                    aria-labelledby='flush-headingThree'
+                    aria-labelledby='flush-headingFive'
                     data-bs-parent='#accordionFlushExample'
                   >
                     <div className='accordion-body text-white bg-black'>
-                      <Link to={'/add'} className='line'>
-                        <p>Add Resource items</p>
+                      <Link to={'/pending'} className='line'>
+                        <p>Pending iReports</p>
                       </Link>
-                      <Link to={'/view'} className='line'>
-                        <p>View All Resource Items</p>
+                      <Link to={'/viewReports'} className='line'>
+                        <p>View All iReports</p>
                       </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className='dash d-flex text-white p-2'>
-              <div>
-                <FaGalacticRepublic />
-              </div>
 
-              <div
-                className='accordion accordion-flush'
-                id='accordionFlushExample'
-              >
-                <div className='accordion-item'>
-                  <h5 className='accordion-header' id='flush-headingFour'>
-                    <button
-                      className='a-btn accordion-button collapsed bg-black text-white'
-                      type='button'
-                      data-bs-toggle='collapse'
-                      data-bs-target='#flush-collapseFour'
-                      aria-expanded='false'
-                      aria-controls='flush-collapseFour'
-                    >
-                      Manage Messages
-                    </button>
-                  </h5>
-                  <div
-                    id='flush-collapseFour'
-                    class='accordion-collapse collapse'
-                    aria-labelledby='flush-headingFour'
-                    data-bs-parent='#accordionFlushExample'
-                  >
-                    <div className='accordion-body text-white bg-black'>
-                      <Link to={'/header'} className='line'>
-                        <p>Manage Header Section</p>
-                      </Link>
-                      <Link to={'/create'} className='line'>
-                        <p>Create Pages</p>
-                      </Link>
-                      <Link to={'/page'} className='line'>
-                        <p>List of Pages</p>
-                      </Link>
-                      <Link to={'/footer'} className='line'>
-                        <p>Manage Footer Section</p>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            <Link className='line' to={`/research`}>
-              <div className='dash d-flex text-white gap-3 p-2'>
+            <Link className='line' to={`/generate`}>
+              <div className='dash2 d-flex text-white gap-3 p-2'>
                 <div>
-                  <SiRoamresearch />
+                  <TbReportSearch />
                 </div>
-                <div>
-                  <h5 className='ff'>Manage Research Int</h5>
+                <div className='manage mt-1'>
+                  <h6>Generate Reports</h6>
                 </div>
               </div>
             </Link>
-            <Link className='line' to='/users'>
+
+            {/* <Link className='line' to={`/users`}>
               <div className='dash d-flex text-white gap-3 p-2'>
                 <div>
                   <FiUsers />
                 </div>
-                <div>
-                  <h5 className='ff'>Manage Users</h5>
+                <div className='manage mt-1'>
+                  <h6>Manage Users</h6>
                 </div>
               </div>
-            </Link>
-            <Link className='line' to={`/blog`}>
+            </Link> */}
+
+            <Link className='line' to={`/config`}>
               <div className='dash d-flex text-white gap-3 p-2'>
                 <div>
-                  <SiRoamresearch />
+                  <SiEditorconfig />
                 </div>
-                <div>
-                  <h5 className='ff'>Manage Blog Items</h5>
+                <div className='manage mt-1'>
+                  <h6>Configuration</h6>
                 </div>
               </div>
             </Link>
-            <Link className='line' to='/Sign'>
+            <Link className='line' to='#'>
               <div className='dash d-flex text-white gap-3 p-2'>
                 <div>
                   <GoSignIn />
                 </div>
-                <div>
-                  <h5 className='ff'>Manage newsletter SignUp</h5>
+                <div className='manage mt-1'>
+                  <h6>Help</h6>
                 </div>
               </div>
             </Link>
+          </div>
+
+          <div className='dash d-flex text-white p-2'>
+            <div>
+              <RiHome4Fill />
+            </div>
+            <div
+              className='accordion accordion-flush'
+              id='accordionFlushExample'
+            >
+              <div className='accordion-item'>
+                <h5 className='accordion-header' id='flush-headingSx'>
+                  <button
+                    className='a-btn accordion-button collapsed bg-black text-white'
+                    type='button'
+                    data-bs-toggle='collapse'
+                    data-bs-target='#flush-collapseSx'
+                    aria-expanded='false'
+                    aria-controls='flush-collapseSx'
+                  >
+                    <div className='manage mt-2'>
+                      <h6>Manage Artisan</h6>
+                    </div>
+                  </button>
+                </h5>
+                <div
+                  id='flush-collapseSx'
+                  class='accordion-collapse collapse'
+                  aria-labelledby='flush-headingSx'
+                  data-bs-parent='#accordionFlushExample'
+                >
+                  <div className='accordion-body text-white bg-black'>
+                    <Link to={'/addartisan'} className='line'>
+                      <p>Add New Artisan</p>
+                    </Link>
+                    <Link to={'/viewall'} className='line'>
+                      <p>View All Artisan</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <br />
           <br />
           <div className='drk'>
             <Dark />
           </div>
+          <br />
+          <br />
+          <br />
+          <br />
+
+          {/* <Logout /> */}
         </div>
       </div>
     </div>
